@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:3003/",
+    publicPath: "http://localhost:8083/",
   },
 
   resolve: {
@@ -12,7 +12,7 @@ module.exports = (_, argv) => ({
   },
 
   devServer: {
-    port: 3003,
+    port: 8083,
     historyApiFallback: true,
   },
 
@@ -44,7 +44,7 @@ module.exports = (_, argv) => ({
       name: "StudentApp3",
       filename: "remoteEntry.js",
       remotes: {
-        "StudentApp1": "StudentApp1@http://localhost:3001/remoteEntry.js"
+        "StudentApp1": "StudentApp1@http://localhost:8081/remoteEntry.js"
       },
       exposes: {},
       shared: {
